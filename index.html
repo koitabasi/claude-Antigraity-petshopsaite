@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ペットショップ Antigraity - 家族の一員を見つけよう</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🐾 Antigraity Pet Shop</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">ホーム</a></li>
+                    <li><a href="about.html">お店について</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ヒーローセクション -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>あなたの家族になる<br>最高のパートナーを</h2>
+                <p>愛情いっぱいのペットたちが、新しい家族を待っています</p>
+                <a href="#pets" class="btn btn-primary">ペットを見る</a>
+            </div>
+        </section>
+
+        <!-- お知らせ -->
+        <section class="announcement">
+            <div class="container">
+                <div class="announcement-box">
+                    <span class="badge">新着</span>
+                    <p>🎉 子犬・子猫の新メンバーが仲間入りしました！</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ペット一覧 -->
+        <section id="pets" class="pets-section">
+            <div class="container">
+                <h2 class="section-title">新しい家族を探す</h2>
+                
+                <!-- フィルター -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="dog">犬</button>
+                    <button class="filter-btn" data-filter="cat">猫</button>
+                    <button class="filter-btn" data-filter="small">小動物</button>
+                </div>
+
+                <!-- ペットカード -->
+                <div class="pets-grid">
+                    <!-- 犬 -->
+                    <div class="pet-card" data-category="dog">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop" alt="柴犬">
+                            <span class="pet-badge">人気</span>
+                        </div>
+                        <div class="pet-info">
+                            <h3>柴犬 - さくら</h3>
+                            <p class="pet-details">🎂 生後3ヶ月 / ♀メス</p>
+                            <p class="pet-description">元気いっぱいで人懐っこい性格です</p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">活発</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-card" data-category="dog">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=400&h=300&fit=crop" alt="ゴールデンレトリバー">
+                        </div>
+                        <div class="pet-info">
+                            <h3>ゴールデンレトリバー - レオ</h3>
+                            <p class="pet-details">🎂 生後2ヶ月 / ♂オス</p>
+                            <p class="pet-description">優しく穏やかな性格の男の子</p>
+                            <div class="pet-traits">
+                                <span class="trait">家族向け</span>
+                                <span class="trait">従順</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 猫 -->
+                    <div class="pet-card" data-category="cat">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=400&h=300&fit=crop" alt="スコティッシュフォールド">
+                            <span class="pet-badge">新着</span>
+                        </div>
+                        <div class="pet-info">
+                            <h3>スコティッシュフォールド - もも</h3>
+                            <p class="pet-details">🎂 生後2ヶ月 / ♀メス</p>
+                            <p class="pet-description">甘えん坊で愛らしい女の子</p>
+                            <div class="pet-traits">
+                                <span class="trait">室内飼い</span>
+                                <span class="trait">静か</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-card" data-category="cat">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=400&h=300&fit=crop" alt="アメリカンショートヘア">
+                        </div>
+                        <div class="pet-info">
+                            <h3>アメリカンショートヘア - ルナ</h3>
+                            <p class="pet-details">🎂 生後4ヶ月 / ♀メス</p>
+                            <p class="pet-description">好奇心旺盛で遊び好きな性格</p>
+                            <div class="pet-traits">
+                                <span class="trait">活発</span>
+                                <span class="trait">人懐っこい</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小動物 -->
+                    <div class="pet-card" data-category="small">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=400&h=300&fit=crop" alt="ウサギ">
+                        </div>
+                        <div class="pet-info">
+                            <h3>ホーランドロップ - ミルク</h3>
+                            <p class="pet-details">🎂 生後2ヶ月 / ♂オス</p>
+                            <p class="pet-description">ふわふわで優しい性格のウサギ</p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">静か</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pet-card" data-category="small">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=400&h=300&fit=crop" alt="ハムスター">
+                        </div>
+                        <div class="pet-info">
+                            <h3>ゴールデンハムスター - チョコ</h3>
+                            <p class="pet-details">🎂 生後1ヶ月 / ♀メス</p>
+                            <p class="pet-description">小さくて可愛い、お世話も簡単</p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">コンパクト</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービス紹介 -->
+        <section class="services">
+            <div class="container">
+                <h2 class="section-title">充実のサポート</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏥</div>
+                        <h3>健康保証</h3>
+                        <p>全てのペットは獣医師による健康診断済み。安心してお迎えいただけます。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">📚</div>
+                        <h3>飼育サポート</h3>
+                        <p>初めての方でも安心。飼育方法やしつけのアドバイスを無料でご提供します。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🛒</div>
+                        <h3>用品販売</h3>
+                        <p>フード、おもちゃ、ケージなど、必要なものは全て揃います。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 営業情報 -->
+        <section class="info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>🕐 営業時間</h3>
+                        <p>平日：10:00 - 19:00<br>
+                        土日祝：10:00 - 20:00<br>
+                        定休日：水曜日</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📍 アクセス</h3>
+                        <p>〒100-0001<br>
+                        東京都千代田区○○1-2-3<br>
+                        ○○駅より徒歩5分</p>
+                    </div>
+                    <div class="info-card">
+                        <h3>📞 お問い合わせ</h3>
+                        <p>TEL: 03-1234-5678<br>
+                        Email: info@antigraity-pet.com<br>
+                        <a href="contact.html" class="text-link">お問い合わせフォーム</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Antigraity Pet Shop. All rights reserved.</p>
+            <p>🐾 すべてのペットに愛ある家庭を 🐾</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
