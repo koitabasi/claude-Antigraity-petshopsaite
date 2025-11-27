@@ -6,11 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // ペットフィルター機能
     initPetFilter();
     
+    // ギャラリーフィルター機能
+    initGalleryFilter();
+    
     // お問い合わせフォーム処理
     initContactForm();
     
     // スムーススクロール
     initSmoothScroll();
+    
+    // FAQ アコーディオン
+    initFAQAccordion();
+    
+    // ソート機能
+    initSortFunction();
     
 });
 
@@ -55,6 +64,9 @@ function initPetFilter() {
                     }, 300);
                 }
             });
+            
+            // 件数更新
+            updatePetCount(filterValue);
         });
     });
     
@@ -62,6 +74,111 @@ function initPetFilter() {
     petCards.forEach(card => {
         card.style.transition = 'all 0.3s ease';
     });
+}
+
+/**
+ * ギャラリーフィルター機能の初期化
+ */
+function initGalleryFilter() {
+    const filterButtons = document.querySelectorAll('.gallery-filter-section .filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (filterButtons.length === 0 || galleryItems.length === 0) {
+        return; // ギャラリーページ以外ではスキップ
+    }
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // アクティブ状態の切り替え
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // フィルターの取得
+            const filterValue = this.getAttribute('data-filter');
+            
+            // ギャラリーアイテムのフィルタリング
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+    
+    // 初期状態の設定
+    galleryItems.forEach(item => {
+        item.style.transition = 'all 0.3s ease';
+    });
+}
+
+/**
+ * ソート機能の初期化
+ */
+function initSortFunction() {
+    const sortSelect = document.getElementById('sortSelect');
+    
+    if (!sortSelect) {
+        return; // ソート機能がないページではスキップ
+    }
+    
+    sortSelect.addEventListener('change', function() {
+        const sortValue = this.value;
+        const petCards = Array.from(document.querySelectorAll('.pet-card.detailed'));
+        const container = document.querySelector('.pets-grid');
+        
+        if (!container) return;
+        
+        // ソート処理
+        petCards.sort((a, b) => {
+            switch(sortValue) {
+                case 'price-low':
+                    return parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'));
+                case 'price-high':
+                    return parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price'));
+                case 'age':
+                    return parseInt(a.getAttribute('data-age')) - parseInt(b.getAttribute('data-age'));
+                case 'new':
+                default:
+                    // 新着順（デフォルトの順序）
+                    return 0;
+            }
+        });
+        
+        // DOMを再配置
+        petCards.forEach(card => container.appendChild(card));
+    });
+}
+
+/**
+ * ペット件数の更新
+ */
+function updatePetCount(filterValue) {
+    const resultCount = document.getElementById('resultCount');
+    if (!resultCount) return;
+    
+    const petCards = document.querySelectorAll('.pet-card.detailed');
+    let count = 0;
+    
+    petCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+            count++;
+        }
+    });
+    
+    resultCount.textContent = count;
 }
 
 /**
@@ -223,6 +340,55 @@ function initSmoothScroll() {
 }
 
 /**
+ * FAQのアコーディオン機能
+ */
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (faqItems.length === 0) {
+        return; // FAQがないページではスキップ
+    }
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (!question || !answer) return;
+        
+        // 初期状態で回答を非表示
+        answer.style.display = 'none';
+        answer.style.maxHeight = '0';
+        answer.style.overflow = 'hidden';
+        answer.style.transition = 'max-height 0.3s ease';
+        
+        question.style.cursor = 'pointer';
+        
+        question.addEventListener('click', function() {
+            const isOpen = answer.style.display === 'block';
+            
+            // すべてのFAQを閉じる（オプション：1つだけ開く場合）
+            // faqItems.forEach(otherItem => {
+            //     const otherAnswer = otherItem.querySelector('.faq-answer');
+            //     if (otherAnswer !== answer) {
+            //         otherAnswer.style.display = 'none';
+            //         otherAnswer.style.maxHeight = '0';
+            //     }
+            // });
+            
+            if (isOpen) {
+                answer.style.maxHeight = '0';
+                setTimeout(() => {
+                    answer.style.display = 'none';
+                }, 300);
+            } else {
+                answer.style.display = 'block';
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+/**
  * ナビゲーションのスクロール時の挙動（オプション）
  */
 function initNavbarScroll() {
@@ -243,7 +409,7 @@ function initNavbarScroll() {
 }
 
 // オプション: ナビゲーションスクロール機能を有効化
-// initNavbarScroll();
+initNavbarScroll();
 
 /**
  * ペットカードのホバーエフェクト強化（オプション）
@@ -266,40 +432,83 @@ function enhancePetCards() {
 // enhancePetCards();
 
 /**
- * FAQのアコーディオン機能（オプション）
+ * 画像の遅延読み込み（オプション）
  */
-function initFAQAccordion() {
-    const faqItems = document.querySelectorAll('.faq-item');
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
     
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        // 初期状態で回答を非表示
-        answer.style.display = 'none';
-        answer.style.maxHeight = '0';
-        answer.style.overflow = 'hidden';
-        answer.style.transition = 'max-height 0.3s ease';
-        
-        question.style.cursor = 'pointer';
-        
-        question.addEventListener('click', function() {
-            const isOpen = answer.style.display === 'flex';
-            
-            if (isOpen) {
-                answer.style.maxHeight = '0';
-                setTimeout(() => {
-                    answer.style.display = 'none';
-                }, 300);
-            } else {
-                answer.style.display = 'flex';
-                answer.style.maxHeight = answer.scrollHeight + 'px';
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
             }
         });
     });
+    
+    images.forEach(img => imageObserver.observe(img));
 }
 
-// オプション: FAQアコーディオンを有効化
-// initFAQAccordion();
+// オプション: 遅延読み込みを有効化
+// initLazyLoading();
+
+/**
+ * トップへ戻るボタン（オプション）
+ */
+function initScrollToTop() {
+    // ボタンを作成
+    const scrollButton = document.createElement('button');
+    scrollButton.innerHTML = '↑';
+    scrollButton.className = 'scroll-to-top';
+    scrollButton.style.cssText = `
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #FF6B6B;
+        color: white;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    `;
+    
+    document.body.appendChild(scrollButton);
+    
+    // スクロール時の表示/非表示
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollButton.style.display = 'block';
+        } else {
+            scrollButton.style.display = 'none';
+        }
+    });
+    
+    // クリックでトップへ
+    scrollButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // ホバーエフェクト
+    scrollButton.addEventListener('mouseenter', () => {
+        scrollButton.style.transform = 'scale(1.1)';
+    });
+    
+    scrollButton.addEventListener('mouseleave', () => {
+        scrollButton.style.transform = 'scale(1)';
+    });
+}
+
+// オプション: トップへ戻るボタンを有効化
+initScrollToTop();
 
 console.log('Antigraity Pet Shop - JavaScript loaded successfully! 🐾');

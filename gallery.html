@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ギャラリー - Antigraity Pet Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🐾 Antigraity Pet Shop</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="pets.html">ペット一覧</a></li>
+                    <li><a href="services.html">サービス</a></li>
+                    <li><a href="gallery.html" class="active">ギャラリー</a></li>
+                    <li><a href="about.html">お店について</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ページヘッダー -->
+        <section class="page-header">
+            <div class="container">
+                <h2>ギャラリー</h2>
+                <p>可愛いペットたちと幸せな瞬間</p>
+            </div>
+        </section>
+
+        <!-- ギャラリー紹介 -->
+        <section class="gallery-intro">
+            <div class="container">
+                <div class="intro-content">
+                    <h3>📸 思い出のアルバム</h3>
+                    <p class="lead">
+                        当店から巣立っていったペットたちの成長記録や、
+                        店舗での日常、イベントの様子などをご紹介します。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ギャラリーフィルター -->
+        <section class="gallery-filter-section">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">すべて</button>
+                    <button class="filter-btn" data-filter="adoption">卒業生</button>
+                    <button class="filter-btn" data-filter="store">店舗</button>
+                    <button class="filter-btn" data-filter="event">イベント</button>
+                    <button class="filter-btn" data-filter="trimming">トリミング</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ギャラリーグリッド -->
+        <section class="gallery-grid-section">
+            <div class="container">
+                <div class="gallery-grid">
+                    <!-- 卒業生たち -->
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=600&fit=crop" alt="柴犬の成長">
+                            <div class="gallery-overlay">
+                                <h4>さくらちゃん</h4>
+                                <p>柴犬 - すくすく成長中！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=600&fit=crop" alt="ゴールデンレトリバー">
+                            <div class="gallery-overlay">
+                                <h4>レオくん</h4>
+                                <p>ゴールデンレトリバー - 家族の一員に</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?w=600&h=600&fit=crop" alt="猫の成長">
+                            <div class="gallery-overlay">
+                                <h4>ももちゃん</h4>
+                                <p>スコティッシュフォールド - 幸せ満喫中</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600&h=600&fit=crop" alt="トイプードル">
+                            <div class="gallery-overlay">
+                                <h4>モコちゃん</h4>
+                                <p>トイプードル - お散歩デビュー</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 店舗の様子 -->
+                    <div class="gallery-item" data-category="store">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=600&h=600&fit=crop" alt="店舗外観">
+                            <div class="gallery-overlay">
+                                <h4>店舗外観</h4>
+                                <p>明るく清潔な空間でお待ちしています</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="store">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=600&fit=crop" alt="ペット展示スペース">
+                            <div class="gallery-overlay">
+                                <h4>展示スペース</h4>
+                                <p>ペットたちが快適に過ごせる環境</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="store">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1548595911-cc37f4be7b0c?w=600&h=600&fit=crop" alt="商品コーナー">
+                            <div class="gallery-overlay">
+                                <h4>商品コーナー</h4>
+                                <p>厳選されたペット用品を取り揃え</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="store">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1522276498395-f4f68f7f8454?w=600&h=600&fit=crop" alt="相談カウンター">
+                            <div class="gallery-overlay">
+                                <h4>相談カウンター</h4>
+                                <p>じっくりご相談いただけます</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- イベント -->
+                    <div class="gallery-item" data-category="event">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1601758260886-b3c01d426cec?w=600&h=600&fit=crop" alt="パピー教室">
+                            <div class="gallery-overlay">
+                                <h4>パピー教室</h4>
+                                <p>しつけ教室の様子</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop" alt="ふれあいイベント">
+                            <div class="gallery-overlay">
+                                <h4>ふれあいイベント</h4>
+                                <p>月1回開催の交流会</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?w=600&h=600&fit=crop" alt="クリスマスイベント">
+                            <div class="gallery-overlay">
+                                <h4>クリスマスイベント</h4>
+                                <p>季節のイベントも開催</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?w=600&h=600&fit=crop" alt="撮影会">
+                            <div class="gallery-overlay">
+                                <h4>撮影会</h4>
+                                <p>プロカメラマンによる記念撮影</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- トリミング -->
+                    <div class="gallery-item" data-category="trimming">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=600&h=600&fit=crop" alt="トリミング施術">
+                            <div class="gallery-overlay">
+                                <h4>トリミング施術</h4>
+                                <p>丁寧なカット技術</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="trimming">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=600&h=600&fit=crop" alt="トリミング後">
+                            <div class="gallery-overlay">
+                                <h4>仕上がり</h4>
+                                <p>ふわふわに変身！</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="trimming">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?w=600&h=600&fit=crop" alt="シャンプー">
+                            <div class="gallery-overlay">
+                                <h4>シャンプー</h4>
+                                <p>リラックスできるケア</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="trimming">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?w=600&h=600&fit=crop" alt="デザインカット">
+                            <div class="gallery-overlay">
+                                <h4>デザインカット</h4>
+                                <p>個性を引き出すスタイリング</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- その他の可愛い瞬間 -->
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=600&h=600&fit=crop" alt="ウサギ">
+                            <div class="gallery-overlay">
+                                <h4>ミルクくん</h4>
+                                <p>ホーランドロップ - お昼寝中</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?w=600&h=600&fit=crop" alt="猫とおもちゃ">
+                            <div class="gallery-overlay">
+                                <h4>ルナちゃん</h4>
+                                <p>アメリカンショートヘア - 遊び盛り</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="store">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&h=600&fit=crop" alt="子犬たち">
+                            <div class="gallery-overlay">
+                                <h4>新しい仲間</h4>
+                                <p>新入りの子犬たち</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="event">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=600&h=600&fit=crop" alt="誕生日パーティー">
+                            <div class="gallery-overlay">
+                                <h4>バースデーパーティー</h4>
+                                <p>1歳のお祝い</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=600&h=600&fit=crop" alt="家族写真">
+                            <div class="gallery-overlay">
+                                <h4>家族の一員</h4>
+                                <p>新しい家族との記念撮影</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="adoption">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=600&fit=crop" alt="お散歩">
+                            <div class="gallery-overlay">
+                                <h4>お散歩デビュー</h4>
+                                <p>初めてのお散歩</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- お客様の声 -->
+        <section class="customer-voices">
+            <div class="container">
+                <h2 class="section-title">お客様の声</h2>
+                <div class="voices-grid">
+                    <div class="voice-card">
+                        <div class="voice-header">
+                            <div class="voice-avatar">👨</div>
+                            <div class="voice-info">
+                                <h4>田中様</h4>
+                                <p class="voice-pet">柴犬・さくらちゃん</p>
+                            </div>
+                        </div>
+                        <p class="voice-text">
+                            スタッフの方がとても親切で、初めてのペット飼育でも安心できました。
+                            さくらは今や家族の中心です！定期的にお店に遊びに行っています。
+                        </p>
+                        <div class="voice-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="voice-card">
+                        <div class="voice-header">
+                            <div class="voice-avatar">👩</div>
+                            <div class="voice-info">
+                                <h4>佐藤様</h4>
+                                <p class="voice-pet">スコティッシュフォールド・ももちゃん</p>
+                            </div>
+                        </div>
+                        <p class="voice-text">
+                            健康管理がしっかりしていて、アフターフォローも充実。
+                            LINEでいつでも相談できるのが本当に助かっています。
+                        </p>
+                        <div class="voice-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+
+                    <div class="voice-card">
+                        <div class="voice-header">
+                            <div class="voice-avatar">👨</div>
+                            <div class="voice-info">
+                                <h4>鈴木様</h4>
+                                <p class="voice-pet">ゴールデンレトリバー・レオくん</p>
+                            </div>
+                        </div>
+                        <p class="voice-text">
+                            大型犬の飼育に不安がありましたが、丁寧にアドバイスしていただき、
+                            今ではレオと幸せな毎日を送っています。パピー教室も楽しいです！
+                        </p>
+                        <div class="voice-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram連携 -->
+        <section class="instagram-section">
+            <div class="container">
+                <h2 class="section-title">📷 Instagram</h2>
+                <p class="instagram-text">
+                    最新の情報やペットたちの日常を<br>
+                    Instagramで配信中！<br>
+                    <strong>@antigraity_petshop</strong> をフォローしてください
+                </p>
+                <div class="instagram-notice">
+                    <p>※実際のサイトではInstagramフィードが表示されます</p>
+                </div>
+                <a href="#" class="btn btn-primary instagram-btn">Instagramを見る</a>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="gallery-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>あなたも幸せな思い出を作りませんか？</h2>
+                    <p>素敵な出会いが待っています</p>
+                    <div class="cta-buttons">
+                        <a href="pets.html" class="btn btn-primary">ペットを見る</a>
+                        <a href="contact.html" class="btn btn-secondary">お問い合わせ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Antigraity Pet Shop. All rights reserved.</p>
+            <p>🐾 すべてのペットに愛ある家庭を 🐾</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

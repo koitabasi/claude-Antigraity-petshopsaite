@@ -15,6 +15,9 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">ホーム</a></li>
+                    <li><a href="pets.html">ペット一覧</a></li>
+                    <li><a href="services.html">サービス</a></li>
+                    <li><a href="gallery.html">ギャラリー</a></li>
                     <li><a href="about.html">お店について</a></li>
                     <li><a href="contact.html" class="active">お問い合わせ</a></li>
                 </ul>
@@ -27,234 +30,205 @@
         <section class="page-header">
             <div class="container">
                 <h2>お問い合わせ</h2>
-                <p>ご質問やご相談、お気軽にお問い合わせください</p>
+                <p>お気軽にご相談ください</p>
             </div>
         </section>
 
         <!-- お問い合わせ方法 -->
-        <section class="contact-methods">
+        <section style="padding: 2rem 0; background: #F8F9FA;">
             <div class="container">
-                <h2 class="section-title">お問い合わせ方法</h2>
-                <div class="methods-grid">
-                    <div class="method-card">
-                        <div class="method-icon">📞</div>
-                        <h3>お電話</h3>
-                        <p class="method-detail">03-1234-5678</p>
-                        <p>営業時間内にお気軽にお電話ください</p>
-                        <p class="small-text">平日 10:00-19:00 / 土日祝 10:00-20:00</p>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📞 お電話</h3>
+                        <p>
+                            <strong>03-1234-5678</strong><br>
+                            営業時間内にお気軽にどうぞ<br>
+                            平日：10:00-19:00<br>
+                            土日祝：10:00-20:00
+                        </p>
                     </div>
-                    <div class="method-card">
-                        <div class="method-icon">✉️</div>
-                        <h3>メール</h3>
-                        <p class="method-detail">info@antigraity-pet.com</p>
-                        <p>24時間受付。2営業日以内に返信いたします</p>
+                    <div class="info-card">
+                        <h3>✉️ メール</h3>
+                        <p>
+                            <strong>info@antigraity-pet.com</strong><br>
+                            24時間受付中<br>
+                            2営業日以内にご返信します
+                        </p>
                     </div>
-                    <div class="method-card">
-                        <div class="method-icon">💬</div>
-                        <h3>LINE</h3>
-                        <p class="method-detail">@antigraity-pet</p>
-                        <p>友だち追加で気軽にご相談いただけます</p>
-                    </div>
-                    <div class="method-card">
-                        <div class="method-icon">🏪</div>
-                        <h3>ご来店</h3>
-                        <p class="method-detail">予約不要</p>
-                        <p>営業時間内はいつでもご来店ください</p>
-                        <p class="small-text">※混雑時はお待ちいただく場合があります</p>
+                    <div class="info-card">
+                        <h3>📱 LINE</h3>
+                        <p>
+                            <strong>@antigraity_pet</strong><br>
+                            友だち追加で簡単相談<br>
+                            育成サポートも対応
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- お問い合わせフォーム -->
-        <section class="contact-form-section">
+        <section style="padding: 3rem 0;">
             <div class="container">
-                <div class="form-container">
-                    <h2 class="section-title">お問い合わせフォーム</h2>
-                    <p class="form-description">
-                        下記フォームに必要事項をご記入の上、送信してください。<br>
-                        <span class="required-mark">*</span>は必須項目です。
-                    </p>
+                <div class="contact-form">
+                    <h2 style="text-align: center; margin-bottom: 2rem; color: #2C3E50;">お問い合わせフォーム</h2>
                     
-                    <form id="contactForm" class="contact-form">
-                        <!-- お名前 -->
+                    <!-- 成功メッセージ -->
+                    <div id="successMessage" class="success-message">
+                        <h3>✅ 送信完了</h3>
+                        <p>お問い合わせありがとうございます。<br>2営業日以内にご返信いたします。</p>
+                    </div>
+
+                    <!-- フォーム -->
+                    <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">お名前 <span class="required-mark">*</span></label>
+                            <label for="name">お名前 <span style="color: #FF6B6B;">*</span></label>
                             <input type="text" id="name" name="name" required placeholder="山田 太郎">
                         </div>
 
-                        <!-- メールアドレス -->
                         <div class="form-group">
-                            <label for="email">メールアドレス <span class="required-mark">*</span></label>
+                            <label for="email">メールアドレス <span style="color: #FF6B6B;">*</span></label>
                             <input type="email" id="email" name="email" required placeholder="example@email.com">
                         </div>
 
-                        <!-- 電話番号 -->
                         <div class="form-group">
                             <label for="phone">電話番号</label>
                             <input type="tel" id="phone" name="phone" placeholder="03-1234-5678">
                         </div>
 
-                        <!-- お問い合わせ種別 -->
                         <div class="form-group">
-                            <label for="inquiry-type">お問い合わせ種別 <span class="required-mark">*</span></label>
-                            <select id="inquiry-type" name="inquiry-type" required>
+                            <label for="subject">お問い合わせ種別 <span style="color: #FF6B6B;">*</span></label>
+                            <select id="subject" name="subject" required>
                                 <option value="">選択してください</option>
                                 <option value="pet">ペットについて</option>
-                                <option value="visit">ご来店について</option>
-                                <option value="goods">商品について</option>
-                                <option value="support">飼育サポートについて</option>
+                                <option value="visit">見学予約</option>
+                                <option value="trimming">トリミング予約</option>
+                                <option value="hotel">ペットホテル</option>
+                                <option value="class">しつけ教室</option>
+                                <option value="goods">用品について</option>
                                 <option value="other">その他</option>
                             </select>
                         </div>
 
-                        <!-- 興味のあるペット -->
                         <div class="form-group">
-                            <label>興味のあるペット</label>
-                            <div class="checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="pet-interest" value="dog">
-                                    <span>犬</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="pet-interest" value="cat">
-                                    <span>猫</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="pet-interest" value="small">
-                                    <span>小動物</span>
-                                </label>
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="pet-interest" value="bird">
-                                    <span>鳥類</span>
-                                </label>
-                            </div>
+                            <label for="petType">興味のあるペット</label>
+                            <select id="petType" name="petType">
+                                <option value="">選択してください</option>
+                                <option value="dog">犬</option>
+                                <option value="cat">猫</option>
+                                <option value="small">小動物</option>
+                                <option value="undecided">まだ決めていない</option>
+                            </select>
                         </div>
 
-                        <!-- お問い合わせ内容 -->
                         <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span class="required-mark">*</span></label>
-                            <textarea id="message" name="message" rows="8" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+                            <label for="message">お問い合わせ内容 <span style="color: #FF6B6B;">*</span></label>
+                            <textarea id="message" name="message" required placeholder="お問い合わせ内容をご記入ください"></textarea>
                         </div>
 
-                        <!-- プライバシーポリシー同意 -->
-                        <div class="form-group">
-                            <label class="checkbox-label privacy-check">
-                                <input type="checkbox" name="privacy" required>
-                                <span><a href="#" class="text-link">プライバシーポリシー</a>に同意する <span class="required-mark">*</span></span>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">
+                                <a href="#" style="color: #FF6B6B;">プライバシーポリシー</a>に同意する
                             </label>
                         </div>
 
-                        <!-- 送信ボタン -->
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary btn-large">送信する</button>
-                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">送信する</button>
                     </form>
-
-                    <!-- 送信完了メッセージ（非表示） -->
-                    <div id="successMessage" class="success-message" style="display: none;">
-                        <div class="success-icon">✓</div>
-                        <h3>送信完了</h3>
-                        <p>お問い合わせありがとうございます。<br>2営業日以内にご返信いたします。</p>
-                    </div>
                 </div>
             </div>
         </section>
 
         <!-- よくある質問 -->
-        <section class="faq-section">
+        <section style="padding: 3rem 0; background: #F8F9FA;">
             <div class="container">
                 <h2 class="section-title">よくあるご質問</h2>
                 <div class="faq-list">
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span class="faq-icon">Q</span>
-                            <h3>初めてペットを飼うのですが、何から始めればいいですか？</h3>
+                            <h4>Q. 見学は予約が必要ですか？</h4>
+                            <span class="faq-icon">▼</span>
                         </div>
                         <div class="faq-answer">
-                            <span class="faq-icon">A</span>
-                            <p>まずはご来店いただき、スタッフにご相談ください。住環境、ライフスタイル、ご予算などをお伺いし、最適なペットをご提案いたします。飼育に必要な用品やお世話の方法も丁寧にご説明いたします。</p>
+                            <p>予約なしでもご見学いただけますが、事前にご予約いただくとスタッフがじっくりご案内できます。お電話やLINEでお気軽にご予約ください。</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span class="faq-icon">Q</span>
-                            <h3>見学だけでも大丈夫ですか？</h3>
+                            <h4>Q. ペットの予約はできますか？</h4>
+                            <span class="faq-icon">▼</span>
                         </div>
                         <div class="faq-answer">
-                            <span class="faq-icon">A</span>
-                            <p>もちろんです。予約不要でいつでもご来店いただけます。ペットたちと触れ合いながら、ゆっくりとご検討ください。スタッフが丁寧にご案内いたします。</p>
+                            <p>はい、可能です。ご来店が難しい場合は、お写真やビデオ通話でのご案内も行っています。お気に入りの子が見つかりましたら、お早めにご連絡ください。</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span class="faq-icon">Q</span>
-                            <h3>アフターサポートはありますか？</h3>
+                            <h4>Q. 支払い方法は何がありますか？</h4>
+                            <span class="faq-icon">▼</span>
                         </div>
                         <div class="faq-answer">
-                            <span class="faq-icon">A</span>
-                            <p>はい。お迎え後も飼育相談、しつけのアドバイス、健康管理のサポートを無料で提供しています。LINEでも気軽にご相談いただけます。困ったときはいつでもご連絡ください。</p>
+                            <p>現金、クレジットカード（VISA、MasterCard、JCB等）、PayPay、各種電子マネーに対応しています。ペットローンのご相談も承ります。</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span class="faq-icon">Q</span>
-                            <h3>ペット用品も購入できますか？</h3>
+                            <h4>Q. アフターサポートはありますか？</h4>
+                            <span class="faq-icon">▼</span>
                         </div>
                         <div class="faq-answer">
-                            <span class="faq-icon">A</span>
-                            <p>はい。フード、ケージ、おもちゃ、ケア用品など、厳選した商品を取り揃えています。お迎え時にはスターターキットもご用意しておりますので、初日から安心してお世話を始められます。</p>
+                            <p>もちろんです！お迎え後の飼育相談、しつけのアドバイスなど、LINEやお電話でいつでもご相談いただけます。定期的なフォローアップも行っています。</p>
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <div class="faq-question">
-                            <span class="faq-icon">Q</span>
-                            <h3>健康保証はありますか？</h3>
+                            <h4>Q. 遠方からでも購入できますか？</h4>
+                            <span class="faq-icon">▼</span>
                         </div>
                         <div class="faq-answer">
-                            <span class="faq-icon">A</span>
-                            <p>全てのペットは獣医師による健康診断を受けており、健康証明書を発行しています。お迎え後の健康保証制度もございますので、詳しくはスタッフにお問い合わせください。</p>
+                            <p>はい、全国対応しています。空輸での配送も可能です（別途送料がかかります）。ビデオ通話でのご案内やオンライン相談も行っていますので、お気軽にお問い合わせください。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 店舗情報 -->
-        <section class="store-info-section">
+        <!-- アクセス情報 -->
+        <section style="padding: 3rem 0;">
             <div class="container">
-                <div class="store-info-box">
-                    <h2>店舗情報</h2>
-                    <dl class="store-info-list">
-                        <dt>店舗名</dt>
-                        <dd>Antigraity Pet Shop</dd>
-                        
-                        <dt>住所</dt>
-                        <dd>〒100-0001 東京都千代田区○○1-2-3</dd>
-                        
-                        <dt>電話</dt>
-                        <dd>03-1234-5678</dd>
-                        
-                        <dt>営業時間</dt>
-                        <dd>
-                            平日：10:00 - 19:00<br>
-                            土日祝：10:00 - 20:00
-                        </dd>
-                        
-                        <dt>定休日</dt>
-                        <dd>毎週水曜日</dd>
-                        
-                        <dt>アクセス</dt>
-                        <dd>○○駅より徒歩5分</dd>
-                    </dl>
-                    <div class="store-note">
-                        <p>💡 <strong>ご来店のお客様へ</strong></p>
-                        <p>駐車場はございませんので、近隣のコインパーキングをご利用ください。ペット同伴でのご来店も歓迎いたします。</p>
+                <h2 class="section-title">店舗情報</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3>📍 住所</h3>
+                        <p>
+                            〒100-0001<br>
+                            東京都千代田区○○1-2-3<br>
+                            ○○駅より徒歩5分
+                        </p>
                     </div>
+                    <div class="info-card">
+                        <h3>🕐 営業時間</h3>
+                        <p>
+                            平日：10:00 - 19:00<br>
+                            土日祝：10:00 - 20:00<br>
+                            定休日：毎週水曜日
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h3>🚗 駐車場</h3>
+                        <p>
+                            専用駐車場はございません<br>
+                            近隣のコインパーキングを<br>
+                            ご利用ください
+                        </p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="about.html" class="btn btn-secondary">店舗詳細を見る</a>
                 </div>
             </div>
         </section>

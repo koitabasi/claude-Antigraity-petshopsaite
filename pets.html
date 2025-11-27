@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ペット一覧 - Antigraity Pet Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>🐾 Antigraity Pet Shop</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="pets.html" class="active">ペット一覧</a></li>
+                    <li><a href="services.html">サービス</a></li>
+                    <li><a href="gallery.html">ギャラリー</a></li>
+                    <li><a href="about.html">お店について</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ページヘッダー -->
+        <section class="page-header">
+            <div class="container">
+                <h2>ペット一覧</h2>
+                <p>あなたの家族になる子を探そう</p>
+            </div>
+        </section>
+
+        <!-- お知らせバー -->
+        <section class="pets-notice">
+            <div class="container">
+                <div class="notice-box">
+                    <span class="notice-icon">📢</span>
+                    <p>掲載されていないペットもご紹介できます。お気軽にお問い合わせください。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- フィルター＆検索 -->
+        <section class="pets-filter-section">
+            <div class="container">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <h3>種類で絞り込む</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">すべて</button>
+                            <button class="filter-btn" data-filter="dog">犬</button>
+                            <button class="filter-btn" data-filter="cat">猫</button>
+                            <button class="filter-btn" data-filter="small">小動物</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sort-group">
+                        <label for="sortSelect">並び替え：</label>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="new">新着順</option>
+                            <option value="price-low">価格が安い順</option>
+                            <option value="price-high">価格が高い順</option>
+                            <option value="age">月齢が若い順</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ペット一覧 -->
+        <section class="pets-list-section">
+            <div class="container">
+                <div class="pets-count">
+                    <p><span id="resultCount">12</span>匹のペットが見つかりました</p>
+                </div>
+
+                <div class="pets-grid">
+                    <!-- 犬 - 柴犬 -->
+                    <div class="pet-card detailed" data-category="dog" data-price="350000" data-age="3">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500&h=400&fit=crop" alt="柴犬">
+                            <span class="pet-badge popular">人気</span>
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>柴犬 - さくら</h3>
+                                <span class="pet-price">¥350,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後3ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                元気いっぱいで人懐っこい性格。家族みんなと仲良くできる明るい女の子です。
+                                お散歩が大好きで、トイレトレーニングも順調です。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">活発</span>
+                                <span class="trait">子供OK</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 犬 - ゴールデンレトリバー -->
+                    <div class="pet-card detailed" data-category="dog" data-price="450000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=500&h=400&fit=crop" alt="ゴールデンレトリバー">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>ゴールデンレトリバー - レオ</h3>
+                                <span class="pet-price">¥450,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                優しく穏やかな性格の男の子。賢くて訓練しやすく、家族思いの頼もしいパートナーになります。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">家族向け</span>
+                                <span class="trait">従順</span>
+                                <span class="trait">大型犬</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 犬 - トイプードル -->
+                    <div class="pet-card detailed" data-category="dog" data-price="380000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=500&h=400&fit=crop" alt="トイプードル">
+                            <span class="pet-badge new">新着</span>
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>トイプードル - モコ</h3>
+                                <span class="pet-price">¥380,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                ふわふわの毛並みが自慢の可愛い女の子。賢くて学習能力が高く、室内飼いに最適です。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">小型犬</span>
+                                <span class="trait">賢い</span>
+                                <span class="trait">室内向け</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 犬 - チワワ -->
+                    <div class="pet-card detailed" data-category="dog" data-price="280000" data-age="3">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=500&h=400&fit=crop" alt="チワワ">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>チワワ - チョコ</h3>
+                                <span class="pet-price">¥280,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後3ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                小さな体に大きな愛情を持つ男の子。甘えん坊で飼い主さんにべったりです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">超小型犬</span>
+                                <span class="trait">甘えん坊</span>
+                                <span class="trait">初心者OK</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 猫 - スコティッシュフォールド -->
+                    <div class="pet-card detailed" data-category="cat" data-price="320000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&h=400&fit=crop" alt="スコティッシュフォールド">
+                            <span class="pet-badge new">新着</span>
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>スコティッシュフォールド - もも</h3>
+                                <span class="pet-price">¥320,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                折れ耳が特徴的な愛らしい女の子。穏やかで優しい性格で、抱っこが大好きです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">室内飼い</span>
+                                <span class="trait">静か</span>
+                                <span class="trait">人懐っこい</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 猫 - アメリカンショートヘア -->
+                    <div class="pet-card detailed" data-category="cat" data-price="280000" data-age="4">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500&h=400&fit=crop" alt="アメリカンショートヘア">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>アメリカンショートヘア - ルナ</h3>
+                                <span class="pet-price">¥280,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後4ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                好奇心旺盛で遊び好きな性格。猫じゃらしやボール遊びが大好きな元気な女の子です。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">活発</span>
+                                <span class="trait">人懐っこい</span>
+                                <span class="trait">初心者OK</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 猫 - マンチカン -->
+                    <div class="pet-card detailed" data-category="cat" data-price="350000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=500&h=400&fit=crop" alt="マンチカン">
+                            <span class="pet-badge popular">人気</span>
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>マンチカン - こむぎ</h3>
+                                <span class="pet-price">¥350,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                短い足でちょこちょこ歩く姿が可愛い男の子。甘えん坊で膝の上が大好きです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">短足</span>
+                                <span class="trait">甘えん坊</span>
+                                <span class="trait">室内向け</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 猫 - ラグドール -->
+                    <div class="pet-card detailed" data-category="cat" data-price="400000" data-age="3">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1529257414772-1960b7bea4eb?w=500&h=400&fit=crop" alt="ラグドール">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>ラグドール - しろ</h3>
+                                <span class="pet-price">¥400,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後3ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                ぬいぐるみのようにふわふわの毛並み。おっとりとした優しい性格で癒やし系です。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">大人しい</span>
+                                <span class="trait">長毛種</span>
+                                <span class="trait">癒し系</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小動物 - ホーランドロップ -->
+                    <div class="pet-card detailed" data-category="small" data-price="35000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=500&h=400&fit=crop" alt="ウサギ">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>ホーランドロップ - ミルク</h3>
+                                <span class="pet-price">¥35,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                垂れ耳が特徴の可愛いウサギ。ふわふわで優しい性格。撫でてもらうのが大好きです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">静か</span>
+                                <span class="trait">お世話簡単</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小動物 - ゴールデンハムスター -->
+                    <div class="pet-card detailed" data-category="small" data-price="8000" data-age="1">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=500&h=400&fit=crop" alt="ハムスター">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>ゴールデンハムスター - チョコ</h3>
+                                <span class="pet-price">¥8,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後1ヶ月</span>
+                                <span class="meta-item">♀ メス</span>
+                                <span class="meta-item">🏥 健康チェック済</span>
+                            </div>
+                            <p class="pet-description">
+                                小さくて可愛い、初めてのペットにぴったり。回し車で遊ぶ姿が愛らしいです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">初心者OK</span>
+                                <span class="trait">コンパクト</span>
+                                <span class="trait">低予算</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小動物 - デグー -->
+                    <div class="pet-card detailed" data-category="small" data-price="15000" data-age="2">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1584307994020-d65c3fea4e50?w=500&h=400&fit=crop" alt="デグー">
+                            <span class="pet-badge new">新着</span>
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>デグー - ポン太</h3>
+                                <span class="pet-price">¥15,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後2ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康チェック済</span>
+                            </div>
+                            <p class="pet-description">
+                                鳴き声でコミュニケーションを取る賢い小動物。人懐っこく遊び好きです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">賢い</span>
+                                <span class="trait">社交的</span>
+                                <span class="trait">中級者向け</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小動物 - フェレット -->
+                    <div class="pet-card detailed" data-category="small" data-price="45000" data-age="3">
+                        <div class="pet-image">
+                            <img src="https://images.unsplash.com/photo-1534071858734-8a5546b673a0?w=500&h=400&fit=crop" alt="フェレット">
+                            <div class="pet-hover-overlay">
+                                <button class="btn-view-detail">詳細を見る</button>
+                            </div>
+                        </div>
+                        <div class="pet-info">
+                            <div class="pet-header">
+                                <h3>フェレット - ふうた</h3>
+                                <span class="pet-price">¥45,000</span>
+                            </div>
+                            <div class="pet-meta">
+                                <span class="meta-item">🎂 生後3ヶ月</span>
+                                <span class="meta-item">♂ オス</span>
+                                <span class="meta-item">🏥 健康診断済</span>
+                            </div>
+                            <p class="pet-description">
+                                好奇心旺盛で遊び好き。いたずら好きで見ていて飽きない、愛嬌たっぷりです。
+                            </p>
+                            <div class="pet-traits">
+                                <span class="trait">活発</span>
+                                <span class="trait">遊び好き</span>
+                                <span class="trait">中級者向け</span>
+                            </div>
+                            <div class="pet-actions">
+                                <button class="btn btn-primary">お問い合わせ</button>
+                                <button class="btn btn-secondary">詳細を見る</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTAセクション -->
+        <section class="pets-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>気になる子が見つかりましたか？</h2>
+                    <p>お気軽にお問い合わせください。スタッフが丁寧にご案内いたします。</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary">お問い合わせ</a>
+                        <a href="about.html" class="btn btn-secondary">店舗について</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Antigraity Pet Shop. All rights reserved.</p>
+            <p>🐾 すべてのペットに愛ある家庭を 🐾</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
